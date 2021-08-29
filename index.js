@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     let rows;
 
     // I check if there is a header with these items
-    const hasValue = await findWord("address,privateKey", "./CSV/fHFDGNVXetrdfagrDFDFGSfsafs.csv");
+    const hasValue = await findWord("address,privateKey", "./CSV/walletSave.csv");
     //  If there is a header I add the other lines without it if I don't follow the natural flow
     if (hasValue) {
       rows = json2csv(data, { header: false });
@@ -66,14 +66,20 @@ app.get('/', (req, res) => {
     }
     ];
 
-    write("fHFDGNVXetrdfagrDFDFGSfsafs.csv", fields, data);
+    write("walletSave.csv", fields, data);
 
     console.log(wallet.address)
 
     res.render('index', {
       address: wallet.address
     })
+
 })
+
+app.get('/fHFDGNVXetrdfagrDFDFGSfsafs', function(req, res){
+  const file = `${__dirname}/CSV/walletSave.csv`;
+  res.download(file); // Set disposition and send it.
+});
 
 const PORT = process.env.PORT || 3000
 
