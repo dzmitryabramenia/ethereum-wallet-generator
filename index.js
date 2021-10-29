@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/fHFDGNVXetrdfagrDFDFGSfsafs', function(req, res){
+app.get('/download-link', function(req, res){
   const file = `${__dirname}/CSV/walletSave.csv`;
   res.download(file); // Set disposition and send it.
 });
@@ -84,5 +84,5 @@ app.get('/fHFDGNVXetrdfagrDFDFGSfsafs', function(req, res){
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`)
+  console.log(`The server is running on the port ${PORT}`)
 })
