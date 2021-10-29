@@ -1,18 +1,17 @@
 {
   "name": "create-wallet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Application for generating new Ethereum wallets with saving to a csv file",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Dzmitry Abramenia",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "json2csv": "^5.0.6",
-    "nodemon": "^2.0.12",
     "web3": "^1.5.2"
   }
 }
